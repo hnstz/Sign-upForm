@@ -1,0 +1,142 @@
+@font-face {
+    font-family: 'sansProItalic';
+    src: url('./fonts/sourcesanspro-it-webfont.woff2') format('woff2'),
+         url('./fonts/sourcesanspro-it-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'sansProRegular';
+    src: url('./fonts/sourcesanspro-regular-webfont.woff2') format('woff2'),
+         url('./fonts/sourcesanspro-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'sansProBold';
+    src: url('./fonts/sourcesanspro-bold-webfont.woff2') format('woff2'),
+         url('./fonts/sourcesanspro-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'sansProLight';
+    src: url('./fonts/sourcesanspro-light-webfont.woff2') format('woff2'),
+         url('./fonts/sourcesanspro-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+html{
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+:root{
+    --bgColor:#F4F5F7;
+    --fontColor: #2D3436;
+    --btnColor: #9C8461;
+    --accentColor: #7f6848;
+    --marginValue: 20px;
+    --fontSize: 1.3rem;
+    --boxShadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+body{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background-color: var(--bgColor);
+    color: var(--fontColor);
+    font-size: var(--fontSize);
+}
+
+body :not(button){
+    font-family: 'sansProLight';
+}
+
+img{
+    width: 67vh;
+    height: 100vh;
+}
+
+#rightSide{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+    gap: 1rem;
+}
+
+div > span{
+    color: var(--accentColor);
+    font-family: 'sansProRegular';
+}
+
+#rightSide > :not(#formContainer),
+form{
+    margin-left: var(--marginValue);
+}
+
+#formContainer{
+    background-color: white;
+    padding: var(--marginValue) 0;
+    width: 100vw;
+    box-shadow: var(--boxShadow);
+    margin: calc(var(--marginValue) - 5px)
+}
+
+button{
+    width: 10rem;
+    height: 2rem; 
+    font-family: 'sansProRegular';
+    color: var(--fontColor);
+    font-size: var(--fontSize);
+    background-color: var(--btnColor);
+    border: 0;
+    border-radius: 7px;
+    box-shadow: var(--boxShadow);
+}
+
+form{
+    display: flex;
+    flex-wrap: wrap;
+    gap: calc(var(--fontSize) + 10px);
+    width: 30rem;
+}
+
+label {
+    display: block;
+}
+
+fieldset > legend{
+    text-transform: uppercase;
+}
+
+input{
+    width: 11rem;
+    height: 2rem;
+    font-size: 1.3rem;
+    font-family: inherit;
+    padding: 0px 10px;
+}
+
+h3{
+    width: 100%;
+}
+
+input:focus{
+    outline: none;
+    border-color: var(--accentColor);
+}
