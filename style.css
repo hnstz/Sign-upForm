@@ -1,26 +1,7 @@
 @font-face {
-    font-family: 'sansProItalic';
-    src: url('./fonts/sourcesanspro-it-webfont.woff2') format('woff2'),
-         url('./fonts/sourcesanspro-it-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
     font-family: 'sansProRegular';
     src: url('./fonts/sourcesanspro-regular-webfont.woff2') format('woff2'),
          url('./fonts/sourcesanspro-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-
-@font-face {
-    font-family: 'sansProBold';
-    src: url('./fonts/sourcesanspro-bold-webfont.woff2') format('woff2'),
-         url('./fonts/sourcesanspro-bold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -39,11 +20,12 @@ html{
     box-sizing: border-box;
 }
 
-* {
+*, *::before, *::after {
     margin: 0;
     padding: 0;
-    
+    box-sizing: inherit;
 }
+
 :root{
     --bgColor:#F4F5F7;
     --fontColor: #2D3436;
@@ -92,7 +74,7 @@ form{
 #formContainer{
     background-color: white;
     padding: var(--marginValue) 0;
-    width: 100vw;
+    width: 100%;
     box-shadow: var(--boxShadow);
     margin: calc(var(--marginValue) - 5px)
 }
@@ -139,4 +121,38 @@ h3{
 input:focus{
     outline: none;
     border-color: var(--accentColor);
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    img {
+        width: 100vw;
+        height: 20vh;
+        object-fit: cover; 
+    }
+
+    #rightSide {
+        align-items: center;
+        margin-top: var(--marginValue);
+    }
+
+    #rightSide > :not(#formContainer),
+    form {
+        margin-left: 0;
+    }
+
+    form {
+        width: 80%;
+        max-width: 250px;
+        justify-content: center;
+        margin-left: var(--marginValue);
+    }
+
+    input {
+        width: 100%;
+        box-sizing: border-box;
+    }
 }
