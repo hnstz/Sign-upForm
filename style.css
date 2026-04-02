@@ -43,6 +43,7 @@ body{
     background-color: var(--bgColor);
     color: var(--fontColor);
     font-size: var(--fontSize);
+    padding-bottom: 20px;
 }
 
 body :not(button){
